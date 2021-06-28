@@ -2,37 +2,38 @@ import { BrowserRouter as Router, Route, Switch, Link } from "react-router-dom";
 
 import { useState } from "react";
 import './App.css';
-// import Login from "./components/Login";
-// import Orders from "./components/Orders";
-// import Logout from "./components/Logout";
+import Login from "./Login";
+import Orders from "./Orders";
+import Logout from "./Logout";
 
 
 
 function App() {
-  // const user = {
-  //   "email" : "test@email.com",
-  //   "password" : "1234567"
-  // }
-  // const [isRegistered, setIsRegistered] = useState(false);
-  // const [userNotFound, setUserNotFound] = useState(false);
-  // const [userLoggedIn, setUserLoggedIn] = useState(false);
+  const user = {
+    "email" : "test@email.com",
+    "password" : "1234567"
+  }
+  
+  const [isRegistered, setIsRegistered] = useState(false);
+  const [userNotFound, setUserNotFound] = useState(false);
+  const [userLoggedIn, setUserLoggedIn] = useState(false);
 
-  // const validUser = (username, password) => {
-  //   console.log(isRegistered);
-  //   if(username === user.email || password === user.password){
-  //     setIsRegistered(true);
-  //     setUserLoggedIn(true);
-  //   }else{
-  //     setUserNotFound(true);
-  //   }
-  // }
+  const validUser = (username, password) => {
+    console.log(isRegistered);
+    if(username === user.email || password === user.password){
+      setIsRegistered(true);
+      setUserLoggedIn(true);
+    }else{
+      setUserNotFound(true);
+    }
+  }
 
 
   return (
     <div class="bg-gradient-to-r from-yellow-400 via-red-500 to-pink-500 min-h-screen">
       <div class="max-w-lg mx-auto flex flex-col">
         {/* Router */}
-        {/* <Router>
+        <Router>
           <ul class="flex">
             <li class="mr-6">
               { userLoggedIn ? 
@@ -71,7 +72,7 @@ function App() {
           }
           </Route>
         </Switch>
-        </Router> */}
+        </Router>
         {/* isLoggedIn False */}
       </div>
     </div>
